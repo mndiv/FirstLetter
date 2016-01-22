@@ -144,7 +144,8 @@ public class MainActivityFragment extends Fragment implements TextToSpeech.OnIni
         if (status == TextToSpeech.SUCCESS) {
 
             int result = tts.setLanguage(Locale.US);
-            tts.setPitch((float)1.5);
+            tts.setPitch((float)1.0);
+            tts.setSpeechRate((float)0.2);
 
             if (result == TextToSpeech.LANG_MISSING_DATA
                     || result == TextToSpeech.LANG_NOT_SUPPORTED) {
@@ -161,6 +162,6 @@ public class MainActivityFragment extends Fragment implements TextToSpeech.OnIni
 
     private void speakOut() {
 
-        tts.speak(question, TextToSpeech.QUEUE_FLUSH, null);
+        tts.speak(question, TextToSpeech.QUEUE_FLUSH, null,null);
     }
 }
